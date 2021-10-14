@@ -11,7 +11,30 @@ namespace DonacionSangre
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["nombreSucursal"] == null)
+            {
+                Session.Abandon();
+                Response.Redirect("login.aspx");
+            }
 
+         
+            
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("generarPeticion.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("inicio.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("registrarDonacion.aspx");
         }
     }
 }

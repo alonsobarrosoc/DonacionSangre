@@ -11,14 +11,14 @@
         <div>
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Cerrar Sesión" />
+            <asp:Button ID="Button1" runat="server" Text="Cerrar Sesión" OnClick="Button1_Click" />
             <br />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Generar Petición" />
+            <asp:Button ID="Button2" runat="server" Text="Generar Petición" OnClick="Button2_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button3" runat="server" Text="Registrar Donación" />
+            <asp:Button ID="Button3" runat="server" Text="Registrar Donación" OnClick="Button3_Click" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button4" runat="server" Text="Reportes" />
             <br />

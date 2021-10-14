@@ -37,14 +37,15 @@ create table Peticion(
 	nombrePaciente varchar(120),
 	mililitros int,
 	idTipo int references Tipo,
-	idHospital int references Hospital)
+	idSucursal int references Sucursal)
 --Donacion(idDonacion, nombreDonante, mililitros, fechaDonacion, idPeticion(FK))
 create table Donacion(
 	idDonacion int primary key,
 	nombreDonante varchar(140),
 	mililitros int,
 	fechaDonacion date,
-	idPeticion int references Peticion)
+	idPeticion int references Peticion,
+	idTipo int references Tipo)
 
 
 
@@ -76,13 +77,16 @@ insert into Tipo values(8,'O-')
 
 
 insert into Peticion values(1,CURRENT_TIMESTAMP, 'Alonso Barroso Corral', 892, 1, 1)
-insert into Donacion values(1, 'Tere Corral Valdez', 128, CURRENT_TIMESTAMP, 1)
+insert into Donacion values(1, 'Tere Corral Valdez', 128, CURRENT_TIMESTAMP, 1,1)
 
 insert into Peticion values(2, CURRENT_TIMESTAMP, 'Sergio López Salas', 123, 3, 1)
 
 
 
-select correo, contrasena from Sucursal
+
+select idPeticion from Peticion
+
+
 
 
 
