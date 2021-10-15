@@ -15,10 +15,23 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Regresar" />
+            <asp:Button ID="Button2" runat="server" Text="Regresar" OnClick="Button2_Click" />
             <br />
             <br />
-&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label5" runat="server" Text="Buscar por categoría"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+            </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox3" runat="server" Width="188px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Buscar" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label6" runat="server"></asp:Label>
+            <br />
 &nbsp;&nbsp;
             <br />
             <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
@@ -30,7 +43,6 @@
             <asp:GridView ID="GridView2" runat="server">
             </asp:GridView>
             <br />
-            <asp:Label ID="Label4" runat="server"></asp:Label>
             <br />
             <br />
             <br />
@@ -53,7 +65,12 @@
             </asp:DropDownList>
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label7" runat="server"></asp:Label>
             <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Registrar" />
             <br />
             <br />
             <br />

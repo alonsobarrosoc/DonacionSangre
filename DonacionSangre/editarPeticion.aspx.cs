@@ -7,23 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace DonacionSangre
 {
-    public partial class dashboard : System.Web.UI.Page
+    public partial class editarPeticion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["nombreSucursal"] == null)
+            if (Session["nombreSucursal"] == null)
             {
                 Session.Abandon();
                 Response.Redirect("login.aspx");
             }
-
-         
-            
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("generarPeticion.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -32,14 +24,9 @@ namespace DonacionSangre
             Response.Redirect("inicio.aspx");
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("registrarDonacion.aspx");
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("editarPeticion.aspx");
+            Response.Redirect("dashboard.aspx");
         }
     }
 }

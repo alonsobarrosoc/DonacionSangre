@@ -69,9 +69,11 @@
   <ItemGroup>
     <Content Include="dashboard.aspx" />
     <Content Include="DonacionSangre.sql" />
+    <Content Include="editarPeticion.aspx" />
     <Content Include="generarPeticion.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="querys.sql" />
     <Content Include="registrarDonacion.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -83,6 +85,13 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarPeticion.aspx.cs">
+      <DependentUpon>editarPeticion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarPeticion.aspx.designer.cs">
+      <DependentUpon>editarPeticion.aspx</DependentUpon>
     </Compile>
     <Compile Include="generarPeticion.aspx.cs">
       <DependentUpon>generarPeticion.aspx</DependentUpon>

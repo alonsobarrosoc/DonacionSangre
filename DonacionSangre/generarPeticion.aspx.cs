@@ -49,20 +49,26 @@ namespace DonacionSangre
             String query = "insert into Peticion values(?, CURRENT_TIMESTAMP, ?, ?, ?, ?)";
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(query, conexion);
-            comando.Parameters.AddWithValue("idPeticion", r.Next(1, 999999));
-            comando.Parameters.AddWithValue("nombrePaciente", TextBox1.Text);
-            comando.Parameters.AddWithValue("mililitros", Int32.Parse(TextBox2.Text));
-            comando.Parameters.AddWithValue("idTipo", Int32.Parse(DropDownList1.SelectedValue));
-            comando.Parameters.AddWithValue("idSucursal", Session["idSucursal"]);
-            try
+            Boolean bandera = true;
+            while (bandera)
             {
-                comando.ExecuteNonQuery();
-                TextBox1.Text = "";
-                TextBox2.Text = "";
-                Label4.Text = "Se registró la petición correctamente";
-            } catch(Exception)
-            {
-                Label4.Text = "Ocurrió un error";
+                try
+                {
+                    comando.Parameters.AddWithValue("idPeticion", r.Next(1, 999999));
+                    comando.Parameters.AddWithValue("nombrePaciente", TextBox1.Text);
+                    comando.Parameters.AddWithValue("mililitros", Int32.Parse(TextBox2.Text));
+                    comando.Parameters.AddWithValue("idTipo", Int32.Parse(DropDownList1.SelectedValue));
+                    comando.Parameters.AddWithValue("idSucursal", Session["idSucursal"]);
+                    comando.ExecuteNonQuery();
+                    TextBox1.Text = "";
+                    TextBox2.Text = "";
+                    Label4.Text = "Se registró la petición correctamente";
+                    bandera = false;
+                } catch(Exception)
+                {
+                    
+                }
+
             }
         }
     }

@@ -84,9 +84,3 @@ insert into Peticion values(2, CURRENT_TIMESTAMP, 'Sergio López Salas', 123, 3, 
 
 
 
-select idPeticion from Peticion
-
-
-
-
-

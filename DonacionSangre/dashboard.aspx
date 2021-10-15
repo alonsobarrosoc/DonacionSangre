@@ -20,6 +20,10 @@
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button3" runat="server" Text="Registrar Donación" OnClick="Button3_Click" />
 &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Editar Peticion" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button4" runat="server" Text="Reportes" />
             <br />
             <br />
