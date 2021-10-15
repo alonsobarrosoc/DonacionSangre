@@ -18,6 +18,50 @@
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Regresar" />
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="Buscar por categoría"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+            </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox3" runat="server" Width="177px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Buscar" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label6" runat="server"></asp:Label>
+            <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;
+            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ButtonType="Button" HeaderText="Seleccionar" ShowHeader="True" ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
+            <asp:GridView ID="GridView2" runat="server">
+            </asp:GridView>
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label7" runat="server" Text="Nombre del paciente"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox4" runat="server" Width="229px"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label8" runat="server" Text="Necesita"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp; Tipo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button4" runat="server" Text="Actualizar" />
             <br />
             <br />
             <br />
