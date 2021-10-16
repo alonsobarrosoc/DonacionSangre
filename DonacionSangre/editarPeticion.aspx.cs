@@ -24,7 +24,7 @@ namespace DonacionSangre
                 DropDownList2.Items.Add("Nombre del paciente");
                 DropDownList2.Items.Add("Tipo");
             }
-
+            Button6.Visible = false;
             Label6.Text = "Busque y seleccione la petición a la que quiere registrar una donación";
             String queryTipo = "select * from Tipo";
             OdbcConnection conexion = new ConexionBD().con;
@@ -149,6 +149,72 @@ namespace DonacionSangre
             lector.Close();
             conexion.Close();
 
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            String actualizar = "update Peticion set nombrePaciente = ?, mililitros = ?, idTipo = ? where idPeticion = ?";
+            OdbcConnection conexion = new ConexionBD().con;
+            OdbcCommand comando = new OdbcCommand(actualizar, conexion);
+            try
+            {
+                comando.Parameters.AddWithValue("nombrePaciente", TextBox4.Text);
+                comando.Parameters.AddWithValue("mililitros", TextBox5.Text);
+                comando.Parameters.AddWithValue("idTipo", Int32.Parse(DropDownList1.SelectedValue));
+                comando.Parameters.AddWithValue("idPetcion", Int32.Parse(GridView2.Rows[0].Cells[0].Text));
+
+                comando.ExecuteNonQuery();
+                Label9.Text = "Se actualizaron los valores de la petción correctamente";
+                TextBox4.Text = "";
+                TextBox5.Text = "";
+                conexion.Close();
+
+            } catch(Exception ex)
+            {
+                Label9.Text = "Ocurrió un probvlema, por favor vuelva a intentar";
+            }
+
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Button5.Visible = false;
+            String queryChecarDonaciones = "select count(idPeticion) from Donacion where idPeticion = ?";
+            OdbcConnection conexion = new ConexionBD().con;
+            OdbcCommand comando = new OdbcCommand(queryChecarDonaciones, conexion);
+            OdbcDataReader lector = comando.ExecuteReader();
+            lector.Read();
+            Label9.Text = "Exitesten " + lector.GetString(0) + " donaciones para esta petición, ¿está seguro de querer borrar esta petición?";
+            Button6.Visible = true;
+            lector.Close();
+            conexion.Close();
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            String borrarDoinaciones = "delete from Donaciones where idPeticion = ?";
+            String borrarPeticion = "delete from Peticion where idPeticion = ?";
+            OdbcConnection conexion = new ConexionBD().con;
+            OdbcCommand comando = new OdbcCommand(borrarDoinaciones, conexion);
+            try
+            {
+                comando.Parameters.AddWithValue("idPeticion", GridView2.Rows[0].Cells[0].Text);
+                comando.ExecuteNonQuery();
+                comando = new OdbcCommand(borrarPeticion, conexion);
+                comando.Parameters.AddWithValue("idPeticion", GridView2.Rows[0].Cells[0].Text);
+                comando.ExecuteNonQuery();
+                Label9.Text = "Se actualizaron los valores de la petción correctamente";
+                Button5.Visible = true;
+                Button6.Visible = false;
+                TextBox4.Text = "";
+                TextBox5.Text = "";
+                conexion.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Label9.Text = "Ocurrió un probvlema, por favor vuelva a intentar " + ex.ToString();
+            }
         }
     }
 }

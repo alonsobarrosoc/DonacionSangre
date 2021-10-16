@@ -59,9 +59,15 @@
             </asp:DropDownList>
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label9" runat="server"></asp:Label>
+            <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button4" runat="server" Text="Actualizar" />
+            <asp:Button ID="Button4" runat="server" Text="Actualizar" OnClick="Button4_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Borrar petición" />
+            <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Si estoy seguro" />
             <br />
             <br />
             <br />
