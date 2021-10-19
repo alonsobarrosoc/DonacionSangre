@@ -29,6 +29,12 @@ namespace DonacionSangre
             DropDownList1.DataBind();
             lector.Close();
             conexion.Close();
+            if(CheckBoxList1.Items.Count == 0)
+            {
+                CheckBoxList1.Items.Add(new ListItem("idPeticion", " Peticion.idPeticion as 'idPeticion"));
+
+
+            }
 
 
 

@@ -27,6 +27,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FALTA HACER HACER EL CHECKBOXLIST PARA VER QUE METEMOS EN EL GRIDVIEW<br />
             <br />
 &nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label2" runat="server" Text="Seleccione que queire que salga en el reporte"></asp:Label>
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+            </asp:CheckBoxList>
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label3" runat="server" Text="Seleccione los filtros que quiere en el reporte"></asp:Label>
+            <br />
+&nbsp;&nbsp;&nbsp;
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Rango de fechas" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
