@@ -67,18 +67,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminDashboard.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="DonacionSangre.sql" />
     <Content Include="editarDonacion.aspx" />
     <Content Include="editarPeticion.aspx" />
+    <Content Include="editarSucursal.aspx" />
     <Content Include="generarPeticion.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="nuevaSucursal.aspx" />
     <Content Include="querys.sql" />
     <Content Include="registrarDonacion.aspx" />
+    <Content Include="reportes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminDashboard.aspx.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDashboard.aspx.designer.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -101,6 +112,13 @@
     <Compile Include="editarPeticion.aspx.designer.cs">
       <DependentUpon>editarPeticion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="editarSucursal.aspx.cs">
+      <DependentUpon>editarSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarSucursal.aspx.designer.cs">
+      <DependentUpon>editarSucursal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="generarPeticion.aspx.cs">
       <DependentUpon>generarPeticion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,6 +140,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="nuevaSucursal.aspx.cs">
+      <DependentUpon>nuevaSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevaSucursal.aspx.designer.cs">
+      <DependentUpon>nuevaSucursal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registrarDonacion.aspx.cs">
       <DependentUpon>registrarDonacion.aspx</DependentUpon>
@@ -129,6 +154,13 @@
     </Compile>
     <Compile Include="registrarDonacion.aspx.designer.cs">
       <DependentUpon>registrarDonacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportes.aspx.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportes.aspx.designer.cs">
+      <DependentUpon>reportes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

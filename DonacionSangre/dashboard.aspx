@@ -29,7 +29,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button4" runat="server" Text="Reportes" />
+            <asp:Button ID="Button4" runat="server" Text="Reportes" OnClick="Button4_Click" />
             <br />
             <br />
             <br />

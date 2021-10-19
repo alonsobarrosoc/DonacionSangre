@@ -23,12 +23,27 @@ namespace DonacionSangre
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            String query = "select idSucursal, nombre, correo, contrasena from Sucursal where correo = ? and contrasena = ?";
+            String queryAdmin = "select * from Admin where correo = ? and contrasena = ?";
             OdbcConnection conexion = new ConexionBD().con;
-            OdbcCommand comando = new OdbcCommand(query, conexion);
+            OdbcCommand comando = new OdbcCommand(queryAdmin, conexion);
             comando.Parameters.AddWithValue("correo", TextBox1.Text);
             comando.Parameters.AddWithValue("contrasena", TextBox2.Text);
             OdbcDataReader lector = comando.ExecuteReader();
+            //lector.Read();
+            if(lector.HasRows)
+            {
+                lector.Read();
+                Session.Add("admin", lector.GetString(0));
+                Response.Redirect("adminDashboard.aspx");
+            }
+
+
+
+            String query = "select idSucursal, nombre, correo, contrasena from Sucursal where correo = ? and contrasena = ?";
+            comando = new OdbcCommand(query, conexion);
+            comando.Parameters.AddWithValue("correo", TextBox1.Text);
+            comando.Parameters.AddWithValue("contrasena", TextBox2.Text);
+            lector = comando.ExecuteReader();
             lector.Read();
             Session.Add("idSucursal", lector.GetInt32(0));
             Session.Add("nombreSucursal", lector.GetString(1));

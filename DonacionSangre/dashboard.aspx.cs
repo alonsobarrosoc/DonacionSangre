@@ -41,5 +41,15 @@ namespace DonacionSangre
         {
             Response.Redirect("editarPeticion.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editarDonacion.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("resportes.aspx");
+        }
     }
 }
