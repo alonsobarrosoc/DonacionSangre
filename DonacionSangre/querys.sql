@@ -147,3 +147,27 @@ select Peticion.nombrePaciente as 'Nombre del paciente',
 	where Peticion.idPeticion not in(select idPeticion from Donacion)
 	group by Peticion.nombrePaciente,Peticion.mililitros,Tipo.nombre,Sucursal.nombre,Ciudad.nombre,Estado.nombre,Sucursal.ubicacion
 
+
+select Ciudad.idCiudad as 'idCiudad', Ciudad.nombre as 'Ciudad', Estado.nombre as 'Estado'  from Ciudad inner join Estado on Estado.idEstado = Ciudad.idEstado
+select * from Donacion
+
+select count(Donacion.idPeticion) from Donacion 
+	inner join Peticion on Peticion.idPeticion = Donacion.idPeticion
+	inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal
+	where Sucursal.idCiudad = 1
+select count(Peticion.idPeticion) from Peticion
+	inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal
+	where Sucursal.idCiudad = 1
+select count(Sucursal.idCiudad) from Sucursal where Sucursal.idCiudad = 1
+
+
+
+
+
+
+
+
+
+
+
+

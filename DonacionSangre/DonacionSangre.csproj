@@ -70,6 +70,7 @@
     <Content Include="adminDashboard.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="DonacionSangre.sql" />
+    <Content Include="editarCiudades.aspx" />
     <Content Include="editarDonacion.aspx" />
     <Content Include="editarPeticion.aspx" />
     <Content Include="editarSucursal.aspx" />
@@ -97,6 +98,13 @@
     </Compile>
     <Compile Include="dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarCiudades.aspx.cs">
+      <DependentUpon>editarCiudades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarCiudades.aspx.designer.cs">
+      <DependentUpon>editarCiudades.aspx</DependentUpon>
     </Compile>
     <Compile Include="editarDonacion.aspx.cs">
       <DependentUpon>editarDonacion.aspx</DependentUpon>
