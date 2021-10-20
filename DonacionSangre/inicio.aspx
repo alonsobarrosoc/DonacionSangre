@@ -16,6 +16,31 @@
             <br />
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="¡Necesitamos tu ayuda!"></asp:Label>
+            <br />
+            <br />
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Buscar por "></asp:Label>
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Buscar" />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:GridView ID="GridView2" runat="server">
+            </asp:GridView>
+            <br />
+            <br />
         </div>
     </form>
 </body>

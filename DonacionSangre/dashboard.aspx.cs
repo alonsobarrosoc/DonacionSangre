@@ -49,7 +49,7 @@ namespace DonacionSangre
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("resportes.aspx");
+            Response.Redirect("reportes.aspx");
         }
     }
 }

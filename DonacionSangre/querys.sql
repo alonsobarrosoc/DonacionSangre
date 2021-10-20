@@ -74,3 +74,76 @@ select Peticion.nombrePaciente as 'Nombre del paciente',
 select * from Peticion
 intersect
 select mililitros from Peticion where mililitros between 0 and 500
+
+
+select Peticion.idPeticion as 'idPeticion', Peticion.nombrePaciente as 'Nombre del paciente' from Peticion inner join Tipo on Tipo.idTipo = Peticion.idTipo where idSucursal = 1
+
+select * from Donacion
+
+select Donacion.idDonacion as 'idDonacion',
+	Donacion.nombreDonante as 'Nombre del donante',
+	Donacion.mililitros as 'Dono',
+	Donacion.fechaDonacion as 'Fecha',
+	Peticion.nombrePaciente as 'Paciente al que le dono',
+	Tipo.nombre as 'Tipo de sangre'
+	from Donacion
+	inner join Peticion on Peticion.idPeticion = Donacion.idDonacion
+	inner join Tipo on Tipo.idTipo = donacion.idTipo
+	where Peticion.idSucursal = 1
+
+select * from tIPO
+
+select Hospital.nombre as 'Hospital', 
+	Sucursal.nombre as 'Sucursal',
+	Ciudad.nombre as 'Ciudad',
+	Estado.nombre as 'Estado',
+	Sucursal.ubicacion, 
+	isnull(sum(case when Tipo.idTipo = 1 then Peticion.mililitros end), 0) as 'A+',
+	isnull(sum(case when Tipo.idTipo = 2 then Peticion.mililitros end),0) as 'A-',
+	isnull(sum(case when Tipo.idTipo = 3 then Peticion.mililitros end), 0) as 'B+',
+	isnull(sum(case when Tipo.idTipo = 4 then Peticion.mililitros end), 0) as 'B-',
+	isnull(sum(case when Tipo.idTipo = 5 then Peticion.mililitros end), 0) as 'AB+',
+	isnull(sum(case when Tipo.idTipo = 6 then Peticion.mililitros end), 0) as 'AB-',
+	isnull(sum(case when Tipo.idTipo = 7 then Peticion.mililitros end), 0) as 'O+',
+	isnull(sum(case when Tipo.idTipo = 8 then Peticion.mililitros end), 0) as 'O-'
+	from Sucursal
+	inner join Hospital on Hospital.idHospital = Sucursal.idHospital
+	inner join Peticion on Peticion.idSucursal = Sucursal.idSucursal
+	inner join Tipo on Tipo.idTipo = Peticion.idTipo
+	inner join Ciudad on Ciudad.idCiudad = Sucursal.idCiudad
+	inner join Estado on Estado.idEstado = Ciudad.idEstado
+	group by Hospital.nombre, Sucursal.nombre, Sucursal.ubicacion, Ciudad.nombre, Estado.nombre
+
+select * from Peticion
+
+select Peticion.nombrePaciente as 'Nombre del paciente',
+	Peticion.mililitros - sum(Donacion.mililitros) as 'Necesita',
+	Tipo.nombre as 'Tipo',
+	Sucursal.nombre as 'Sucursal',
+	Ciudad.nombre as 'Ciudad',
+	Estado.nombre as 'Estado',
+	Sucursal.ubicacion as 'Ubicación'
+	from Peticion
+	inner join Tipo on Tipo.idTipo = Peticion.idTipo
+	inner join Donacion on donacion.idPeticion = Peticion.idPeticion
+	inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal
+	inner join Ciudad on Ciudad.idCiudad = Sucursal.idCiudad
+	inner join Estado on Estado.idEstado = Ciudad.idEstado
+	group by Peticion.nombrePaciente,Peticion.mililitros,Tipo.nombre,Sucursal.nombre,Ciudad.nombre,Estado.nombre,Sucursal.ubicacion
+	having Peticion.mililitros - sum(Donacion.mililitros) > 0
+union
+select Peticion.nombrePaciente as 'Nombre del paciente',
+	Peticion.mililitros as 'Necesita',
+	Tipo.nombre as 'Tipo',
+	Sucursal.nombre as 'Sucursal',
+	Ciudad.nombre as 'Ciudad',
+	Estado.nombre as 'Estado',
+	Sucursal.ubicacion as 'Ubicación'
+	from Peticion
+	inner join Tipo on Tipo.idTipo = Peticion.idTipo
+	inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal
+	inner join Ciudad on Ciudad.idCiudad = Sucursal.idCiudad
+	inner join Estado on Estado.idEstado = Ciudad.idEstado
+	where Peticion.idPeticion not in(select idPeticion from Donacion)
+	group by Peticion.nombrePaciente,Peticion.mililitros,Tipo.nombre,Sucursal.nombre,Ciudad.nombre,Estado.nombre,Sucursal.ubicacion
+

@@ -16,25 +16,18 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Regresar" />
+            <asp:Button ID="Button2" runat="server" Text="Regresar" OnClick="Button2_Click" />
             <br />
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="Reportes"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp; Reporte de Peticiones<br />
             <br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FALTA HACER HACER EL CHECKBOXLIST PARA VER QUE METEMOS EN EL GRIDVIEW<br />
-            <br />
-&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label2" runat="server" Text="Seleccione que queire que salga en el reporte"></asp:Label>
-            <br />
+&nbsp;&nbsp;&nbsp; Seleccione los campos que quiere que aparezcan en el reporte<br />
 &nbsp;&nbsp;&nbsp;
             <asp:CheckBoxList ID="CheckBoxList1" runat="server">
             </asp:CheckBoxList>
             <br />
-&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Text="Seleccione los filtros que quiere en el reporte"></asp:Label>
+&nbsp;&nbsp;&nbsp; Seleccione los filtros con los que quiere generar este reporte<br />
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Rango de fechas" />
@@ -59,6 +52,8 @@
             </asp:DropDownList>
             <br />
             <br />
+            <asp:Label ID="Label4" runat="server"></asp:Label>
+            <br />
 &nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;&nbsp;&nbsp;
@@ -68,14 +63,53 @@
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
             <br />
-&nbsp;&nbsp;&nbsp;
-            <asp:CheckBox ID="CheckBox4" runat="server" />
+&nbsp;&nbsp;&nbsp; Reporte de onaciones<br />
             <br />
-            <br />
-            <br />
+&nbsp;&nbsp;&nbsp; Seleccione los campos que quiere que aparezcan en el reporte<br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button4" runat="server" Text="Generar reporte de donaciones" />
+            <asp:CheckBoxList ID="CheckBoxList2" runat="server">
+            </asp:CheckBoxList>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp; Seleccione los filtros con los que quiere generar este reporte<br />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="CheckBox4" runat="server" Text="Rango de fechas" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+&nbsp; a&nbsp;
+            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+&nbsp; (AAAA-MM-DD)<br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="CheckBox5" runat="server" Text="Rango de mililitros" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+&nbsp; a&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="CheckBox6" runat="server" Text="Paciente al que dono" />
+            &nbsp;<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:CheckBox ID="CheckBox7" runat="server" Text="Tipo de sangre" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:GridView ID="GridView2" runat="server">
+            </asp:GridView>
+            <br />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button4" runat="server" Text="Generar reporte de donaciones" OnClick="Button4_Click" />
             <br />
             <br />
             <br />
