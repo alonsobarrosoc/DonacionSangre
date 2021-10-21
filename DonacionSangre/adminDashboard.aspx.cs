@@ -38,5 +38,10 @@ namespace DonacionSangre
         {
             Response.Redirect("editarCiudades.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editarHospitales.aspx");
+        }
     }
 }

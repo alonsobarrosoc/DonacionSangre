@@ -160,9 +160,9 @@ namespace DonacionSangre
 
         protected void Button6_Click(object sender, EventArgs e)
         {
-            String deleteDonaciones = "delete from Donacion inner join Peticion on Peticion.idPeticion = Donacion.idPeticion inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal where Sucursal.idCiudad = ?";
-            String deletePeticiones = "delete from Peticion inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal where Sucursal.idCiudad = ?";
-            String deleteSucursales = "select count(Sucursal.idCiudad) from Sucursal where Sucursal.idCiudad = ?";
+            String deleteDonaciones = "delete from Donacion where idDonacion in( select idDonacion from Donacion inner join Peticion on Peticion.idPeticion = Donacion.idPeticion inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal inner join Ciudad on Ciudad.idCiudad= Sucursal.idCiudad where Ciudad.idCiudad = ?)";
+            String deletePeticiones = "delete from Peticion where idPeticion in( select idPeticion from Peticion inner join Sucursal on Sucursal.idSucursal = Peticion.idSucursal inner join Ciudad on Ciudad.idCiudad= Sucursal.idCiudad where Ciudad.idCiudad = ?)";
+            String deleteSucursales = "delete from Sucursal where Sucursal.idCiudad = ?";
 
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(deleteDonaciones, conexion);

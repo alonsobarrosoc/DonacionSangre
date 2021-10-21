@@ -25,7 +25,7 @@
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Editar Ciudades" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button6" runat="server" Text="Editar Hospitales" />
+            <asp:Button ID="Button6" runat="server" Text="Editar Hospitales" OnClick="Button6_Click" />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;

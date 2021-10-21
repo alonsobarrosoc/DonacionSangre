@@ -72,13 +72,13 @@
     <Content Include="DonacionSangre.sql" />
     <Content Include="editarCiudades.aspx" />
     <Content Include="editarDonacion.aspx" />
+    <Content Include="editarHospitales.aspx" />
     <Content Include="editarPeticion.aspx" />
     <Content Include="editarSucursal.aspx" />
     <Content Include="generarPeticion.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="login.aspx" />
     <Content Include="nuevaSucursal.aspx" />
-    <Content Include="querys.sql" />
     <Content Include="registrarDonacion.aspx" />
     <Content Include="reportes.aspx" />
     <Content Include="Web.config" />
@@ -112,6 +112,13 @@
     </Compile>
     <Compile Include="editarDonacion.aspx.designer.cs">
       <DependentUpon>editarDonacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarHospitales.aspx.cs">
+      <DependentUpon>editarHospitales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarHospitales.aspx.designer.cs">
+      <DependentUpon>editarHospitales.aspx</DependentUpon>
     </Compile>
     <Compile Include="editarPeticion.aspx.cs">
       <DependentUpon>editarPeticion.aspx</DependentUpon>
