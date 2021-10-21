@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Nueva Sucursal</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,6 +17,10 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Text="Regresar" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label12" runat="server" Font-Size="XX-Large" Text="Nueva Sucursal"></asp:Label>
             <br />
             <br />
             <br />

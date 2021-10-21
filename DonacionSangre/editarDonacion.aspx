@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Editar Donaciones</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,6 +16,10 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Text="Regresar" OnClick="Button2_Click" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label8" runat="server" Font-Size="XX-Large" Text="Editar Donación"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
@@ -47,19 +51,20 @@
             <asp:TextBox ID="TextBox2" runat="server" Width="196px"></asp:TextBox>
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label4" runat="server" Text="Donó"></asp:Label>
 &nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label5" runat="server" Text="Tipo"></asp:Label>
 &nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="DropDownList2" runat="server">
             </asp:DropDownList>
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label6" runat="server" Text="idPeticion"></asp:Label>
 &nbsp;&nbsp;&nbsp;

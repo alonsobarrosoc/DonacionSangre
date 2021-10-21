@@ -20,7 +20,9 @@
             <br />
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp; Reporte de Peticiones<br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label5" runat="server" Font-Size="XX-Large" Text="Reporte de Peticiones"></asp:Label>
+            <br />
             <br />
 &nbsp;&nbsp;&nbsp; Seleccione los campos que quiere que aparezcan en el reporte<br />
 &nbsp;&nbsp;&nbsp;
@@ -63,7 +65,11 @@
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
             <br />
-&nbsp;&nbsp;&nbsp; Reporte de onaciones<br />
+&nbsp;&nbsp;&nbsp;
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label6" runat="server" Font-Size="XX-Large" Text="Reporte de Donaciones"></asp:Label>
+            <br />
             <br />
 &nbsp;&nbsp;&nbsp; Seleccione los campos que quiere que aparezcan en el reporte<br />
             <br />

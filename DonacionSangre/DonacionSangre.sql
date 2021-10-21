@@ -126,4 +126,4 @@ insert into Peticion values(2, CURRENT_TIMESTAMP, 'Sergio López Salas', 123, 3, 
 
 
 
-
+select correo, ubicacion, nombre, contrasena from Sucursal where idSucursal = 1 and contrasena = 'angelescdmx'

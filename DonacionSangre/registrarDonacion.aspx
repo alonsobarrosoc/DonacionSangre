@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Registrar Donación</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,6 +16,10 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Text="Regresar" OnClick="Button2_Click" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label8" runat="server" Font-Size="XX-Large" Text="Registrar Donación"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;

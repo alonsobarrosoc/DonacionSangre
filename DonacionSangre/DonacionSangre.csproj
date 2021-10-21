@@ -73,6 +73,7 @@
     <Content Include="editarCiudades.aspx" />
     <Content Include="editarDonacion.aspx" />
     <Content Include="editarHospitales.aspx" />
+    <Content Include="editarPerfil.aspx" />
     <Content Include="editarPeticion.aspx" />
     <Content Include="editarSucursal.aspx" />
     <Content Include="generarPeticion.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="editarHospitales.aspx.designer.cs">
       <DependentUpon>editarHospitales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarPerfil.aspx.cs">
+      <DependentUpon>editarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarPerfil.aspx.designer.cs">
+      <DependentUpon>editarPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="editarPeticion.aspx.cs">
       <DependentUpon>editarPeticion.aspx</DependentUpon>

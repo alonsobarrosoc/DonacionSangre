@@ -145,9 +145,9 @@ namespace DonacionSangre
             comando.Parameters.AddWithValue("idSucursal", Int32.Parse(GridView1.SelectedRow.Cells[1].Text));
             lector = comando.ExecuteReader();
             lector.Read();
-            TextBox3.Text = lector.GetString(0);
-            TextBox5.Text = lector.GetString(1);
-            TextBox6.Text = lector.GetString(1);
+            TextBox3.Text = HttpUtility.HtmlDecode(lector.GetString(0));
+            TextBox5.Text = HttpUtility.HtmlDecode(lector.GetString(1));
+            TextBox6.Text = HttpUtility.HtmlDecode(lector.GetString(1));
             lector.Close();
 
             comando = new OdbcCommand(query2, conexion);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
 
 using System.Data.Odbc;
 
@@ -13,6 +14,7 @@ namespace DonacionSangre
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["nombreSucursal"] == null)
             {
                 Session.Abandon();
@@ -35,6 +37,8 @@ namespace DonacionSangre
             DropDownList1.DataTextField = "nombre";
             DropDownList1.DataValueField = "idTipo";
             DropDownList1.DataBind();
+
+            
 
             lector.Close();
             conexion.Close();
@@ -115,10 +119,11 @@ namespace DonacionSangre
                 GridView1.DataBind();
                 lector.Close();
                 conexion.Close();
+                Label6.Text = "Búsqueda de " + DropDownList2.SelectedValue + " :" + TextBox3.Text;
             }
             catch (Exception)
             {
-                Label6.Text = "Ocuurrió un error, revisa los parámetros de la búsqueda";
+                Label6.Text = "Ocurrió un error, revisa los parámetros de la búsqueda";
             }
         }
 
@@ -139,7 +144,8 @@ namespace DonacionSangre
             GridView2.DataBind();
             Label6.Text = "La petición seleccionada para donar es:";
             lector.Read();
-            TextBox4.Text = GridView2.Rows[0].Cells[2].Text;
+            
+            TextBox4.Text = HttpUtility.HtmlDecode(GridView2.Rows[0].Cells[2].Text);
             TextBox5.Text = GridView2.Rows[0].Cells[3].Text;
             comando = new OdbcCommand(queryTipo, conexion);
             comando.Parameters.AddWithValue("nombre", GridView2.Rows[0].Cells[4].Text);
@@ -171,7 +177,7 @@ namespace DonacionSangre
 
             } catch(Exception ex)
             {
-                Label9.Text = "Ocurrió un probvlema, por favor vuelva a intentar";
+                Label9.Text = "Ocurrió un error";
             }
 
         }
@@ -213,8 +219,10 @@ namespace DonacionSangre
             }
             catch (Exception ex)
             {
-                Label9.Text = "Ocurrió un probvlema, por favor vuelva a intentar " + ex.ToString();
+                Label9.Text = "Ocurrió un error " + ex.ToString();
             }
         }
+
+       
     }
 }

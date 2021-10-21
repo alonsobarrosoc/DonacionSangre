@@ -22,7 +22,7 @@ namespace DonacionSangre
             conexion.Close();
             if(DropDownList1.Items.Count == 0)
             {
-                DropDownList1.Items.Add("Nombre");
+                DropDownList1.Items.Add("Nombre del paciente");
                 DropDownList1.Items.Add("Ciudad");
                 DropDownList1.Items.Add("Estado");
                 DropDownList1.Items.Add("Hospital");

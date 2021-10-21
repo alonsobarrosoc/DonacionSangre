@@ -24,12 +24,15 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Editar Peticion" />
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Editar Donación" />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button4" runat="server" Text="Reportes" OnClick="Button4_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="Editar Perfil" />
+            <br />
             <br />
             <br />
             <br />

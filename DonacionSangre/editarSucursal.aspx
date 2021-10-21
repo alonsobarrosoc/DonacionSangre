@@ -19,6 +19,9 @@
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Regresar" />
             <br />
             <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label13" runat="server" Font-Size="XX-Large" Text="Editar Sucursal"></asp:Label>
+            <br />
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label1" runat="server" Text="Busca la sucursal por categoría"></asp:Label>

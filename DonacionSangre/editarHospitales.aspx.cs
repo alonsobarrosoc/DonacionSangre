@@ -89,7 +89,7 @@ namespace DonacionSangre
             OdbcDataReader lector = comando.ExecuteReader();
             GridView2.DataSource = lector;
             GridView2.DataBind();
-            TextBox2.Text = GridView2.Rows[0].Cells[1].Text;
+            TextBox2.Text = HttpUtility.HtmlDecode(GridView2.Rows[0].Cells[1].Text);
             lector.Close();
             conexion.Close();
             GridView1.DataSource = null;

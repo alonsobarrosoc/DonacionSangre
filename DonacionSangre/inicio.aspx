@@ -16,9 +16,12 @@
             <br />
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="¡Necesitamos tu ayuda!"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="¡Necesitamos tu ayuda!" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
             <br />
+            <br />
+            <br />
+            Estos hospitales necesitan donantes<br />
             <br />
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>

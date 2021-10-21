@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editarPeticion.aspx.cs" Inherits="DonacionSangre.editarPeticion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editarPeticion.aspx.cs" Inherits="DonacionSangre.editarPeticion"%>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Editar Peticiones</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,6 +16,10 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Regresar" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label10" runat="server" Font-Size="XX-Large" Text="Editar Petición"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
@@ -45,7 +49,7 @@
 &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label7" runat="server" Text="Nombre del paciente"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Width="229px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" Font-Names="Arial"></asp:TextBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;

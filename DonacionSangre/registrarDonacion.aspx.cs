@@ -48,7 +48,6 @@ namespace DonacionSangre
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //FUNCIONA EL INDICE, QUEREMOS QUE NOS REGRESE EL NUMERO DE PETICION
             String query = "select Peticion.idPeticion as 'idPeticion', Peticion.fechaPublicacion as 'Fecha', Peticion.nombrePaciente as 'Nombre del paciente', Peticion.mililitros - SUM(Donacion.mililitros) as 'Necesita', Tipo.nombre as 'Tipo' from Peticion inner join Donacion on Donacion.idPeticion = Peticion.idPeticion inner join Tipo on Tipo.idTipo = Peticion.idTipo where Peticion.idSucursal = ? and Peticion.idPeticion = ? group by Peticion.idPeticion, Peticion.fechaPublicacion, Peticion.nombrePaciente, Peticion.mililitros, Tipo.nombre having Peticion.mililitros - SUM(Donacion.mililitros) > 0 union select Peticion.idPeticion as 'idPeticion', Peticion.fechaPublicacion as 'Fecha', Peticion.nombrePaciente as 'Nombre del paciente', Peticion.mililitros as 'Necesita', Tipo.nombre as 'Tipo' from Peticion inner join Tipo on Tipo.idTipo = Peticion.idTipo where Peticion.idSucursal = ? and Peticion.idPeticion = ? and idPeticion not in( select idPeticion from Donacion) order by fecha desc";
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(query, conexion);
@@ -132,10 +131,11 @@ namespace DonacionSangre
                 GridView1.DataBind();
                 lector.Close();
                 conexion.Close();
+                Label6.Text = "Busqueda de " + DropDownList2.SelectedValue + " :" + TextBox3.Text;
             }
             catch (Exception)
             {
-                Label6.Text = "Ocuurrió un error, revisa los parámetros de la búsqueda";
+                Label6.Text = "Ocurrió un error, revisa los parámetros de la búsqueda";
             }
 
 
@@ -167,7 +167,9 @@ namespace DonacionSangre
                     Label7.Text = "Registro exitoso";
                     bandera = false;
                 }
-                catch (Exception) { }
+                catch (Exception) {
+                    Label7.Text = "Ocurrió un error";
+                }
             }
 
         }

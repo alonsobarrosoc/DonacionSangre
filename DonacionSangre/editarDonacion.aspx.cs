@@ -123,7 +123,7 @@ namespace DonacionSangre
                 GridView1.DataBind();
                 lector.Close();
                 conexion.Close();
-
+                Label2.Text = "Búsqueda de " + DropDownList1.SelectedValue + " :" + TextBox1.Text;
 
             }
             catch
@@ -144,7 +144,7 @@ namespace DonacionSangre
             OdbcDataReader lector = comando.ExecuteReader();
             GridView2.DataSource = lector;
             GridView2.DataBind();
-            TextBox2.Text = GridView2.Rows[0].Cells[1].Text;
+            TextBox2.Text = HttpUtility.HtmlDecode(GridView2.Rows[0].Cells[1].Text);
             TextBox3.Text = GridView2.Rows[0].Cells[2].Text;
             DropDownList3.SelectedValue = GridView2.Rows[0].Cells[4].Text;
             String tipo = GridView2.Rows[0].Cells[5].Text;
@@ -194,6 +194,7 @@ namespace DonacionSangre
             comando.Parameters.AddWithValue("idDonacion", Int32.Parse(GridView1.Rows[0].Cells[0].Text));
             comando.ExecuteNonQuery();
             conexion.Close();
+            Label7.Text = "Los datos se actualizaron correctamente";
         }
     }
 }

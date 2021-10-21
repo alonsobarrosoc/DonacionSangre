@@ -21,7 +21,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Text="Editar Hospitales"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Editar Hospitales" Font-Size="XX-Large"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;

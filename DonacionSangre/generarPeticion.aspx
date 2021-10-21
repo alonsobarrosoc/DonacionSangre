@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Generar Petición</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,6 +16,10 @@
             <br />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Regresar" />
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label5" runat="server" Font-Size="XX-Large" Text="Generar Petición"></asp:Label>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
