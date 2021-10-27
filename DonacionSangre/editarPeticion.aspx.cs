@@ -26,6 +26,8 @@ namespace DonacionSangre
                 DropDownList2.Items.Add("Nombre del paciente");
                 DropDownList2.Items.Add("Tipo");
             }
+            Button4.Visible = false;
+            Button5.Visible = false;
             Button6.Visible = false;
             Label6.Text = "Busque y seleccione la petición a la que quiere registrar una donación";
             String queryTipo = "select * from Tipo";
@@ -59,6 +61,9 @@ namespace DonacionSangre
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Button6.Visible = false;
+            Button4.Visible = false;
+            Button5.Visible = false;
             GridView2.DataSource = null;
             GridView2.DataBind();
             String query = "";
@@ -154,6 +159,8 @@ namespace DonacionSangre
             DropDownList1.SelectedValue = lector.GetString(0);
             lector.Close();
             conexion.Close();
+            Button4.Visible = true;
+            Button5.Visible = true;
 
         }
 
@@ -188,6 +195,7 @@ namespace DonacionSangre
             String queryChecarDonaciones = "select count(idPeticion) from Donacion where idPeticion = ?";
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(queryChecarDonaciones, conexion);
+            comando.Parameters.AddWithValue("idPeticion", GridView2.Rows[0].Cells[0].Text);
             OdbcDataReader lector = comando.ExecuteReader();
             lector.Read();
             Label9.Text = "Exitesten " + lector.GetString(0) + " donaciones para esta petición, ¿está seguro de querer borrar esta petición?";

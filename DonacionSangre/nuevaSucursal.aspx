@@ -12,11 +12,11 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Cerrar Sesión" />
+            <asp:Button ID="Button1" runat="server" Text="Cerrar Sesión" OnClick="Button1_Click" />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Regresar" />
+            <asp:Button ID="Button2" runat="server" Text="Regresar" OnClick="Button2_Click" />
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;

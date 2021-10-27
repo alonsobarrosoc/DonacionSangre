@@ -22,6 +22,7 @@ namespace DonacionSangre
                 DropDownList2.Items.Add("Nombre del paciente");
                 DropDownList2.Items.Add("Tipo");
             }
+            Button4.Visible = false;
 
 
             Label6.Text = "Busque y seleccione la petición a la que quiere registrar una donación";
@@ -63,11 +64,13 @@ namespace DonacionSangre
             Label6.Text = "La petición seleccionada para donar es:";
             lector.Close();
             conexion.Close();
+            Button4.Visible = true;
 
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Button4.Visible = false;
             GridView2.DataSource = null;
             GridView2.DataBind();
             String query = "";
@@ -166,6 +169,7 @@ namespace DonacionSangre
                     comando.ExecuteNonQuery();
                     Label7.Text = "Registro exitoso";
                     bandera = false;
+                    Button4.Visible = false;
                 }
                 catch (Exception) {
                     Label7.Text = "Ocurrió un error";

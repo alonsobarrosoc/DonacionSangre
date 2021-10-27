@@ -37,6 +37,8 @@ namespace DonacionSangre
                 conexion.Close();
 
             }
+            Button4.Visible = false;
+            Button5.Visible = false;
             Button6.Visible = false;
         }
 
@@ -115,7 +117,7 @@ namespace DonacionSangre
             GridView2.DataSource = lector;
             GridView2.DataBind();
 
-            TextBox2.Text = GridView2.Rows[0].Cells[1].Text;
+            TextBox2.Text = HttpUtility.HtmlDecode(GridView2.Rows[0].Cells[1].Text);
             comando = new OdbcCommand(queryEstado, conexion);
             comando.Parameters.AddWithValue("idCiudad", Int32.Parse(GridView1.SelectedRow.Cells[1].Text));
             lector = comando.ExecuteReader();
@@ -126,6 +128,8 @@ namespace DonacionSangre
             GridView1.DataBind();
             lector.Close();
             conexion.Close();
+            Button4.Visible = true;
+            Button5.Visible = true;
         }
 
         protected void Button5_Click(object sender, EventArgs e)

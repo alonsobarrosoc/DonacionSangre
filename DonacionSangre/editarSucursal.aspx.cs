@@ -51,6 +51,8 @@ namespace DonacionSangre
             DropDownList4.DataBind();
             lector.Close();
             conexion.Close();
+            Button4.Visible = false;
+            Button5.Visible = false;
             Button6.Visible = false;
 
 
@@ -67,11 +69,14 @@ namespace DonacionSangre
         protected void Button2_Click(object sender, EventArgs e)
         {
             
-            Response.Redirect("dashboardAdmin.aspx");
+            Response.Redirect("adminDashboard.aspx");
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Button4.Visible = false;
+            Button5.Visible = false;
+            Button6.Visible = false;
             GridView2.DataSource = null;
             GridView2.DataBind();
             String query = "select Sucursal.idSucursal as 'idSucursal', Sucursal.correo as 'Correo', Sucursal.nombre as 'Nombre de Sucursal', Hospital.nombre as 'Nombre del Hospital', Ciudad.nombre as 'Ciudad' from Sucursal inner join Hospital on Hospital.idHospital = Sucursal.idHospital inner join Ciudad on Ciudad.idCiudad = Sucursal.idCiudad ";
@@ -172,7 +177,8 @@ namespace DonacionSangre
 
 
 
-
+            Button4.Visible = true;
+            Button5.Visible = true;
         }
 
         protected void Button4_Click(object sender, EventArgs e)

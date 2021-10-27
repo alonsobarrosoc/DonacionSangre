@@ -35,6 +35,8 @@ namespace DonacionSangre
                 lector.Read();
                 Session.Add("admin", lector.GetString(0));
                 Response.Redirect("adminDashboard.aspx");
+                lector.Close();
+                conexion.Close();
             }
 
 
@@ -44,12 +46,16 @@ namespace DonacionSangre
             comando.Parameters.AddWithValue("correo", TextBox1.Text);
             comando.Parameters.AddWithValue("contrasena", TextBox2.Text);
             lector = comando.ExecuteReader();
-            lector.Read();
-            Session.Add("idSucursal", lector.GetInt32(0));
-            Session.Add("nombreSucursal", lector.GetString(1));
-            lector.Close();
-            conexion.Close();
-            Response.Redirect("dashboard.aspx");
+            if (lector.HasRows)
+            {
+                lector.Read();
+                Session.Add("idSucursal", lector.GetInt32(0));
+                Session.Add("nombreSucursal", lector.GetString(1));
+                lector.Close();
+                conexion.Close();
+                Response.Redirect("dashboard.aspx");
+
+            }
         }
     }
 }

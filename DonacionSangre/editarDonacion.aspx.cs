@@ -45,7 +45,8 @@ namespace DonacionSangre
                 conexion.Close();
             }
             Label2.Text = "Busque una donación";
-
+            Button4.Visible = false;
+            Button5.Visible = false;
 
 
         }
@@ -64,6 +65,8 @@ namespace DonacionSangre
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Button4.Visible = false;
+            Button5.Visible = false;
             GridView2.DataSource = null;
             GridView2.DataBind();
             TextBox2.Text = "";
@@ -158,6 +161,8 @@ namespace DonacionSangre
             conexion.Close();
             GridView1.DataSource = null;
             GridView1.DataBind();
+            Button4.Visible = true;
+            Button5.Visible = true;
         }
 
         protected void Button4_Click(object sender, EventArgs e)

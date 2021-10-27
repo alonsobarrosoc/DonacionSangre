@@ -22,6 +22,8 @@ namespace DonacionSangre
                 DropDownList1.Items.Add("Nombre");
             }
             Button6.Visible = false;
+            Button4.Visible = false;
+            Button5.Visible = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -94,6 +96,8 @@ namespace DonacionSangre
             conexion.Close();
             GridView1.DataSource = null;
             GridView1.DataBind();
+            Button4.Visible = true;
+            Button5.Visible = true;
 
         }
 

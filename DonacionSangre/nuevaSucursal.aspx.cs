@@ -125,5 +125,16 @@ namespace DonacionSangre
                 }
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminDashboard.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("inicio.aspx");
+        }
     }
 }
