@@ -23,24 +23,35 @@ namespace DonacionSangre
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(Hospitales, conexion);
             OdbcDataReader lector = comando.ExecuteReader();
+            if(DropDownList1.Items.Count == 0)
+            {
             DropDownList1.DataSource = lector;
             DropDownList1.DataTextField = "nombre";
             DropDownList1.DataValueField = "idHospital";
             DropDownList1.DataBind();
 
+            }
+            if(DropDownList2.Items.Count == 0)
+            {
             comando = new OdbcCommand(Ciudades, conexion);
             lector = comando.ExecuteReader();
             DropDownList2.DataSource = lector;
             DropDownList2.DataTextField = "nombre";
             DropDownList2.DataValueField = "idCiudad";
             DropDownList2.DataBind();
+            }
 
+            if(DropDownList3.Items.Count == 0)
+            {
             comando = new OdbcCommand(Estados, conexion);
             lector = comando.ExecuteReader();
             DropDownList3.DataSource = lector;
             DropDownList3.DataTextField = "nombre";
             DropDownList3.DataValueField = "idEstado";
             DropDownList3.DataBind();
+
+            }
+
 
             lector.Close();
             conexion.Close();
@@ -50,7 +61,7 @@ namespace DonacionSangre
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            String inserta = "insert into Sucursal values(?, ?, ?, ?, ?,1,1)";
+            String inserta = "insert into Sucursal values(?, ?, ?, ?, ?,?,?)";
             OdbcConnection conexion = new ConexionBD().con;
             OdbcCommand comando = new OdbcCommand(inserta, conexion);
             bool bandera = true;
@@ -67,7 +78,7 @@ namespace DonacionSangre
                         comando.Parameters.AddWithValue("contrasena", TextBox4.Text);
                         comando.Parameters.AddWithValue("ubicacion", TextBox1.Text);
                         //Ciudad
-                        if (CheckBox1.Checked)
+                        if (CheckBox2.Checked)
                         {
                             String agregaC = "inserta into Ciudad values(?,?,?)";
                             OdbcCommand comandoC = new OdbcCommand(agregaC, conexion);
@@ -92,7 +103,7 @@ namespace DonacionSangre
                         {
                             comando.Parameters.AddWithValue("idCiudad", DropDownList2.SelectedValue);
                         }
-                        if (CheckBox2.Checked)
+                        if (CheckBox1.Checked)
                         {
                             String agregaC = "inserta into Hospital values(?,?)";
                             OdbcCommand comandoH = new OdbcCommand(agregaC, conexion);
@@ -116,7 +127,9 @@ namespace DonacionSangre
                         {
                             comando.Parameters.AddWithValue("idHospital", DropDownList1.SelectedValue);
                         }
+                        comando.ExecuteNonQuery();
                         Label11.Text = "Se agregó la sucursal correctamente";
+                        bandera = false;
                     }
                     catch
                     {

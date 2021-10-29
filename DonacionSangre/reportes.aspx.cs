@@ -24,12 +24,14 @@ namespace DonacionSangre
             OdbcCommand comando = new OdbcCommand(query, conexion);
             OdbcDataReader lector = comando.ExecuteReader();
             DropDownList1.DataSource = lector;
-            DropDownList2.DataSource = lector;
             DropDownList1.DataTextField = "nombre";
-            DropDownList2.DataTextField = "nombre";
             DropDownList1.DataValueField = "idTipo";
-            DropDownList2.DataValueField = "idTipo";
             DropDownList1.DataBind();
+            lector.Close();
+            lector = comando.ExecuteReader();
+            DropDownList2.DataSource = lector;
+            DropDownList2.DataTextField = "nombre";
+            DropDownList2.DataValueField = "idTipo";
             DropDownList2.DataBind();
             lector.Close();
             conexion.Close();
